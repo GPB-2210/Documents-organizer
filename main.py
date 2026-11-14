@@ -9,9 +9,9 @@ def create_default_extentions_map():
     return {
         "Images": [".jpeg", ".png", ".jpg", ".heic", ".gif"],
         "Videos": [".mp4", ".mkv", ".mov", ".flv"],
-        "Documents": [".pdf", ".docx", ".doc",".txt", ".ppt", ".pptx", ".xls", "xlsx"],
+        "Documents": [".pdf", ".docx", ".doc",".txt", ".ppt", ".pptx", ".xls", ".xlsx"],
         "Music": [".mp3", ".wav", ".ogg"],
-        "Code": [".py", ".html", "js", "css"],
+        "Code": [".py", ".html", ".js", ".css"],
         "Archives": [".zip", ".rar", ".7z"],
         "Others": [],
     }
