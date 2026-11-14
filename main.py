@@ -4,6 +4,9 @@ from pathlib import Path
 from tkinter import Tk, filedialog
 
 
+IGNORED_EXTENSIONS = {".ini"}
+
+
 EXTENSIONS_BY_FOLDER = {
     "Images": {".jpeg", ".png", ".jpg", ".heic", ".gif", ".webp", ".svg"},
     "Videos": {".mp4", ".mkv", ".mov", ".flv", ".avi"},
@@ -31,6 +34,8 @@ def create_move_plan(directory, organize_by):
 
     for source in sorted(directory.iterdir()):
         if not source.is_file():
+            continue
+        if source.suffix.lower() in IGNORED_EXTENSIONS:
             continue
 
         if organize_by == "type":
