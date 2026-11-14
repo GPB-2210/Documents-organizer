@@ -7,10 +7,8 @@ from tkinter import Tk, filedialog
 EXTENSIONS_BY_FOLDER = {
     "Images": {".jpeg", ".png", ".jpg", ".heic", ".gif", ".webp", ".svg"},
     "Videos": {".mp4", ".mkv", ".mov", ".flv", ".avi"},
-    "Documents": {
-        ".pdf", ".docx", ".doc", ".txt", ".ppt", ".pptx",
-        ".xls", ".xlsx", ".csv", ".odt", ".ods",
-    },
+    "Documents": {".pdf", ".docx", ".doc", ".txt", ".ppt", ".pptx",
+        ".xls", ".xlsx", ".csv", ".odt", ".ods",},
     "Music": {".mp3", ".wav", ".ogg", ".flac", ".m4a"},
     "Code": {".py", ".html", ".js", ".css", ".java", ".cpp", ".json"},
     "Archives": {".zip", ".rar", ".7z", ".tar", ".gz"},
@@ -18,7 +16,7 @@ EXTENSIONS_BY_FOLDER = {
 
 
 def get_folder_for_extension(extension):
-    """Retorna a categoria correspondente à extensão do arquivo."""
+    #Retorna a categoria correspondente à extensão do arquivo.
     for folder, extensions in EXTENSIONS_BY_FOLDER.items():
         if extension.lower() in extensions:
             return folder
@@ -27,7 +25,7 @@ def get_folder_for_extension(extension):
 
 
 def create_move_plan(directory, organize_by):
-    """Prepara os destinos sem mover os arquivos."""
+    #Prepara os destinos sem mover os arquivos.
     moves = []
     reserved_destinations = set()
 
@@ -59,7 +57,7 @@ def create_move_plan(directory, organize_by):
 
 
 def organize_files(directory, organize_by):
-    """Mostra uma prévia e move os arquivos após confirmação."""
+    #Mostra uma prévia e move os arquivos após confirmação.
     moves = create_move_plan(directory, organize_by)
 
     if not moves:
@@ -71,7 +69,7 @@ def organize_files(directory, organize_by):
         destination_in_folder = destination.relative_to(directory)
         print(f"  {source.name} -> {destination_in_folder}")
 
-    confirmation = input("\nDeseja continuar? (s/N): ").strip().lower()
+    confirmation = input("\nDeseja continuar? (S/N): ").strip().lower()
     if confirmation != "s":
         print("Operação cancelada. Nenhum arquivo foi movido.")
         return
@@ -86,7 +84,7 @@ def organize_files(directory, organize_by):
 
 
 def choose_directory():
-    """Abre a janela para selecionar a pasta que será organizada."""
+    #Abre a janela para selecionar a pasta que será organizada.
     root = Tk()
     root.withdraw()
     directory = filedialog.askdirectory(title="Selecione a pasta")
