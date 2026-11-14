@@ -8,7 +8,7 @@ Um organizador simples de arquivos feito em Python. Ele ajuda a separar os arqui
 - Organiza arquivos em pastas com a data da última modificação, no formato AAAA-MM-DD.
 - Mostra uma prévia antes de mover qualquer arquivo.
 - Evita sobrescrever arquivos: quando já existe um arquivo com o mesmo nome, acrescenta um número ao novo nome.
-- Processa somente os arquivos que estão diretamente na pasta escolhida; não percorre subpastas.
+- Ignora arquivos de configuração INI e processa somente os demais arquivos diretamente na pasta escolhida; não percorre subpastas.
 
 ## Requisitos
 
